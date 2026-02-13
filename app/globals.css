@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 350 100% 97%;
+    --foreground: 350 60% 15%;
 
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 350 80% 95%;
+    --card-foreground: 350 60% 15%;
 
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 350 60% 15%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary: 350 80% 55%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 350 50% 90%;
+    --secondary-foreground: 350 60% 20%;
 
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 350 30% 92%;
+    --muted-foreground: 350 20% 45%;
 
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 350 80% 60%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 62.8% 30.6%;
+    --destructive: 0 62.8% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 350 30% 85%;
+    --input: 350 30% 85%;
+    --ring: 350 80% 55%;
 
     --radius: 0.5rem;
   }
@@ -38,11 +38,13 @@
 
 @layer base {
   * {
-    @apply border-white/10;
+    @apply border-rose-200;
   }
+
   body {
-    @apply bg-background text-foreground selection:bg-white/20;
+    @apply bg-gradient-to-br from-pink-50 via-rose-50 to-red-50 text-rose-950 selection:bg-rose-300/40;
     font-feature-settings: "rlig" 1, "calt" 1;
+    min-height: 100vh;
   }
 }
 
@@ -50,9 +52,11 @@
 ::-webkit-scrollbar {
   width: 8px;
 }
+
 ::-webkit-scrollbar-track {
-  @apply bg-transparent;
+  @apply bg-pink-100;
 }
+
 ::-webkit-scrollbar-thumb {
-  @apply bg-white/20 rounded-full hover:bg-white/30 transition-colors;
+  @apply bg-rose-400 rounded-full hover:bg-rose-500 transition-colors;
 }

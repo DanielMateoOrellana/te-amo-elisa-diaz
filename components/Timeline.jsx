@@ -24,36 +24,36 @@ const DateSection = ({ date, title, description, src, mediaType = 'image', index
                 } gap-12 md:gap-24 max-w-7xl mx-auto`}
         >
             {/* Date Marker Line */}
-            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-transparent via-rose-500/30 to-transparent -translate-x-1/2 hidden md:block" />
+            <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-transparent via-rose-300 to-transparent -translate-x-1/2 hidden md:block" />
 
             {/* Date Dot */}
-            <div className="absolute left-6 md:left-1/2 top-1/2 w-4 h-4 bg-rose-500 rounded-full -translate-x-1/2 shadow-[0_0_20px_rgba(244,63,94,0.5)] hidden md:block" />
+            <div className="absolute left-6 md:left-1/2 top-1/2 w-5 h-5 bg-red-500 rounded-full -translate-x-1/2 shadow-[0_0_20px_rgba(239,68,68,0.6)] hidden md:block border-2 border-white" />
 
             {/* Content Side */}
             <div className={`flex-1 text-center md:text-left space-y-6 ${!isEven && "md:text-right"}`}>
-                <span className="text-rose-400 tracking-[0.2em] text-sm font-bold uppercase block mb-2 drop-shadow-md">{date}</span>
-                <h3 className="text-4xl md:text-5xl font-display leading-tight text-white drop-shadow-xl">{title}</h3>
-                <p className="text-neutral-200 font-light text-lg md:text-xl leading-relaxed max-w-lg mx-auto md:mx-0 ml-auto drop-shadow-sm">
+                <span className="text-red-500 tracking-[0.2em] text-sm font-bold uppercase block mb-2">{date}</span>
+                <h3 className="text-4xl md:text-5xl font-display leading-tight text-rose-900">{title}</h3>
+                <p className="text-rose-800 font-light text-lg md:text-xl leading-relaxed max-w-lg mx-auto md:mx-0 ml-auto">
                     {description}
                 </p>
             </div>
 
             {/* Media Side */}
             <div className="flex-1 w-full relative group">
-                <div className="relative aspect-[4/5] md:aspect-video overflow-hidden rounded-lg border border-white/10 shadow-2xl bg-neutral-900">
+                <div className="relative aspect-[4/5] md:aspect-video overflow-hidden rounded-2xl border-2 border-rose-200 shadow-[0_8px_40px_rgba(244,63,94,0.15)] bg-pink-100 group-hover:border-rose-400 group-hover:shadow-[0_8px_60px_rgba(244,63,94,0.3)] transition-all duration-500">
                     {mediaType === 'video' ? (
-                        <div className="w-full h-full relative flex items-center justify-center bg-black/40 group-hover:bg-black/20 transition-colors cursor-pointer">
-                            {/* Placeholder Video Overlay */}
+                        <div className="w-full h-full relative flex items-center justify-center bg-pink-50 cursor-pointer">
+                            {/* Video */}
                             <video
                                 src={src}
                                 autoPlay
                                 muted
                                 loop
                                 playsInline
-                                className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                                className="absolute inset-0 w-full h-full object-cover"
                             />
-                            <Play className="w-12 h-12 text-white opacity-90 group-hover:scale-110 transition-transform relative z-10 drop-shadow-lg" />
-                            <span className="absolute bottom-4 left-4 text-xs uppercase tracking-widest bg-black/60 px-2 py-1 rounded backdrop-blur-sm text-white font-bold border border-white/10">
+                            <Play className="w-16 h-16 text-white drop-shadow-[0_0_15px_rgba(255,255,255,0.8)] group-hover:scale-110 transition-transform relative z-10" />
+                            <span className="absolute bottom-4 left-4 text-xs uppercase tracking-widest bg-white/80 px-3 py-1 rounded-full backdrop-blur-md text-rose-700 font-bold border border-rose-200 shadow-lg">
                                 Recuerdo en Video
                             </span>
                         </div>
@@ -61,12 +61,9 @@ const DateSection = ({ date, title, description, src, mediaType = 'image', index
                         <img
                             src={src}
                             alt={title}
-                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                         />
                     )}
-
-                    {/* Overlay Gradient */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 pointer-events-none" />
                 </div>
             </div>
 
@@ -135,18 +132,22 @@ const Timeline = () => {
     ];
 
     return (
-        <section className="relative w-full bg-black text-white py-20 overflow-hidden">
-            {/* Star Field Background (Simple CSS for now) */}
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-neutral-900 via-black to-black opacity-50" />
+        <section className="relative w-full bg-gradient-to-b from-rose-50 via-pink-50 to-red-50 py-20 overflow-hidden">
+            {/* Decorative Background Hearts */}
+            <div className="absolute inset-0 opacity-5">
+                <div className="absolute top-20 left-10 w-40 h-40 bg-rose-400 rounded-full blur-3xl" />
+                <div className="absolute top-1/3 right-20 w-60 h-60 bg-pink-400 rounded-full blur-3xl" />
+                <div className="absolute bottom-20 left-1/3 w-48 h-48 bg-red-400 rounded-full blur-3xl" />
+            </div>
 
             <div className="relative z-10 flex flex-col items-center">
                 <motion.h2
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
-                    className="text-center font-display text-3xl md:text-5xl mb-24 text-white drop-shadow-xl"
+                    className="text-center font-display text-3xl md:text-5xl mb-24 text-rose-900"
                 >
-                    Nuestra Bitácora <span className="text-rose-400">de Viaje</span>
+                    Nuestra Bitácora <span className="text-red-500">de Viaje</span>
                 </motion.h2>
 
                 {events.map((event, index) => (
