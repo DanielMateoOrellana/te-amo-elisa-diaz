@@ -42,7 +42,8 @@
   }
 
   body {
-    @apply bg-gradient-to-br from-pink-50 via-rose-50 to-red-50 text-rose-950 selection:bg-rose-300/40;
+    background: linear-gradient(180deg, #fffaf0 0%, #fff5eb 50%, #ffeee6 100%);
+    @apply text-rose-950 selection:bg-rose-300/40;
     font-feature-settings: "rlig" 1, "calt" 1;
     min-height: 100vh;
   }

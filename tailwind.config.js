@@ -9,6 +9,7 @@ module.exports = {
       fontFamily: {
         sans: ['var(--font-inter)', 'sans-serif'],
         display: ['var(--font-playfair)', 'serif'],
+        script: ['var(--font-dancing)', 'cursive'],
       },
       colors: {
         background: "hsl(var(--background))",
