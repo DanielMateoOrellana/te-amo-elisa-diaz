@@ -45,7 +45,7 @@ export default function Ending() {
                         className="flex flex-col items-center space-y-2 mt-4 sm:mt-8"
                     >
                         <p className="text-rose-700 uppercase tracking-[0.15em] sm:tracking-[0.3em] text-[10px] sm:text-xs font-semibold px-2 text-center">
-                            Desde el 19 . 03 . 2006 haciendo tener rabia a la olga jeje
+                            Desde el 15 . 03 . 2006 haciendo tener rabia a la olga jeje
                         </p>
                         <div className="w-[2px] h-3 sm:h-4 bg-red-400 rounded-full" />
                         <p className="text-red-500 font-bold uppercase tracking-[0.2em] sm:tracking-[0.3em] text-xs sm:text-sm md:text-base">
